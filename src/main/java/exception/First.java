@@ -3,11 +3,31 @@ package exception;
 public class First {
 
     public static void main(String[] args) {
-        divideByZero();
-        accessToUnexistingElement();
-        playWithNullPointer();
-        tryToCreateFunnyArray();
-        searchSomethingOutString();
+        try {
+            divideByZero();
+        } catch (ArithmeticException exception) {
+            System.out.println(exception.getMessage());
+        }
+        try {
+            accessToUnexistingElement();
+        } catch (ArrayIndexOutOfBoundsException exception) {
+            System.out.println(exception.getMessage());
+        }
+        try {
+            playWithNullPointer();
+        } catch (NullPointerException exception) {
+            System.out.println(exception.getMessage());
+        }
+        try {
+            tryToCreateFunnyArray();
+        } catch (NegativeArraySizeException exception) {
+            System.out.println(exception.getMessage());
+        }
+        try {
+            searchSomethingOutString();
+        } catch (StringIndexOutOfBoundsException exception) {
+            System.out.println(exception.getMessage());
+        }
         System.out.println("Ура! Меня снова печают");
     }
 
